@@ -1,6 +1,8 @@
 import pygame
 import pygame.mixer
 
+print("Kennedy Kaufman\n6137103\n\n")
+
 FPS = 30
 dimensions = [700, 500]
 
