@@ -39,6 +39,12 @@ class Paddle:
     def draw(self):
         pygame.draw.rect(self.screen, GREEN, [self.x, self.y, self.width, self.height])
 
+class Block:
+    def __init__(self, screen, x, y):
+        self.screen = screen
+        self.x = x
+        self.y = y
+
 pygame.init()
 screen = pygame.display.set_mode(dimensions)
 pygame.display.set_caption("My Breakout Game")
