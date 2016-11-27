@@ -3,7 +3,7 @@ import pygame.mixer
 
 print("Kennedy Kaufman\n6137103\n\n")
 
-FPS = 30
+FPS = 25
 dimensions = [700, 500]
 
 BLACK = (0, 0, 0)
