@@ -47,7 +47,7 @@ class Block:
 
 pygame.init()
 screen = pygame.display.set_mode(dimensions)
-pygame.display.set_caption("My Breakout Game")
+pygame.display.set_caption("Project 4: Breakout")
 
 												#Call sprite objects here
 paddle = Paddle(screen)
