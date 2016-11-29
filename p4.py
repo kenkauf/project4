@@ -45,6 +45,13 @@ class Block:
         self.x = x
         self.y = y
 
+def clamp(val, minimum, maximum):
+    if val < minimum:
+        val = minimum
+    elif val > maximum:
+        val = maximum
+    return val
+
 pygame.init()
 screen = pygame.display.set_mode(dimensions)
 pygame.display.set_caption("Project 4: Breakout")
