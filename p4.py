@@ -3,9 +3,6 @@ import pygame.mixer
 
 print("Kennedy Kaufman\n6137103\n\n")
 
-FPS = 25
-dimensions = [700, 500]
-
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
@@ -13,8 +10,8 @@ YELLOW = (255, 255, 0)
 RED = (255, 0, 0)
 
 class Paddle:
-    def __init__(self, screen):
-        self.screen = screen
+    def __init__(self, gameDisplay):
+        self.gameDisplay = gameDisplay
 
         self.x = 300
         self.y = 470
@@ -37,11 +34,11 @@ class Paddle:
         return self.x >= 0
 
     def draw(self):
-        pygame.draw.rect(self.screen, GREEN, [self.x, self.y, self.width, self.height])
+        pygame.draw.rect(self.gameDisplay, GREEN, [self.x, self.y, self.width, self.height])
 
 class Block:
-    def __init__(self, screen, x, y):
-        self.screen = screen
+    def __init__(self, gameDisplay, x, y):
+        self.gameDisplay = gameDisplay
         self.x = x
         self.y = y
 
@@ -51,22 +48,37 @@ def clamp(val, minimum, maximum):
     elif val > maximum:
         val = maximum
     return val
+    
+class Ball:
+    def __init__(self, screen, paddle, impact, laser):
+        self.screen = screen
+        self.pos = [200, 220]
+        self.x_velo = 8
+        self.y_velo = 8
+        self.radius = 10
+        self.paddle = paddle
+
+        self.impact = impact
+        self.laser = laser
+
+    def draw(self):
+        pygame.draw.circle(self.screen, YELLOW, self.pos, self.radius)
 
 pygame.init()
-screen = pygame.display.set_mode(dimensions)
+gameDisplay = pygame.display.set_mode((700, 500))
 pygame.display.set_caption("Project 4: Breakout")
 
 #Call sprite objects here
-paddle = Paddle(screen)
+paddle = Paddle(gameDisplay)
 
 #Events to do during game
-done = False
+gameExit = False                 
 game_over = False
 clock = pygame.time.Clock()
-while not done:
+while not gameExit:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            done = True
+            gameExit = True
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
                 paddle.moving_right = True
@@ -80,17 +92,14 @@ while not done:
 
     if not game_over:
         paddle.update()
-        #update ball and blocks here
 
-    screen.fill(BLACK)
+    gameDisplay.fill(BLACK)
 
     if not game_over:
-        #look for blocks
-            #draw blocks here
         paddle.draw()
-        # draw ball here
+
 
     pygame.display.flip()            # Reference: http://www.pygame.org/docs/ref/display.html
-    clock.tick(FPS) 
+    clock.tick(30) 
 
 pygame.quit()
