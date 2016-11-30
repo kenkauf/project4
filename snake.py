@@ -169,10 +169,11 @@ while running:
         score += 1
         snake.eat()
         impact.play()
-        myfont = pygame.font.SysFont("monospace", 36)
+        pygame.draw.rect(screen, BLACK, (5, 10, 200, 50)) # so score wont overwrite
+        myfont = pygame.font.SysFont("monospace", 25)
         label = myfont.render(("Score: "+str(score)), 1, WHITE)
         screen.blit(label, (10, 10))
-        pygame.display.flip()
+        #pygame.display.flip()
         # http://www.pygame.org/docs/tut/tom/games2.html
         food1.erase()
         food1 = Apple(screen)
