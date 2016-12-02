@@ -1,7 +1,6 @@
 print("\nKennedy Kaufman\n61371023\n")
 
 #  TURN ON SOUND, super cool background music will help increase scores, its science
-#  Save .wav and .mp3 sounds into a folder titled 'sounds' in the same directory as 'snake.py'
 
 #  Snake Game for SI 206 Project 4
 #  Use arrow keys to move snake around
@@ -150,8 +149,8 @@ screen.blit(background, (0, 0))
 pygame.display.flip()
 
 clock = pygame.time.Clock()
-bite = pygame.mixer.Sound("sounds/bite.wav")
-pygame.mixer.music.load("sounds/EDM.mp3")
+bite = pygame.mixer.Sound("bite.wav")
+pygame.mixer.music.load("EDM.mp3")
 # while pygame.mixer.music.get_busy(): 
 #     pygame.time.Clock().tick(10)
 pygame.mixer.music.play(-1)
