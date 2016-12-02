@@ -128,6 +128,7 @@ class Apple:
         pygame.draw.rect(self.surface, L_GREEN, (self.x, self.y, obstacleSize, obstacleSize), 0)
 
 score = 0
+scoreBoard = []
 pygame.init()
 pygame.mixer.init()
 #make screen
