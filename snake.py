@@ -1,5 +1,8 @@
 print("\nKennedy Kaufman\n61371023\n")
+
 #  TURN ON SOUND, super cool background music will help increase scores, its science
+#  Save .wav and .mp3 sounds into a folder titled 'sounds' in the same directory as 'snake.py'
+
 #  Snake Game for SI 206 Project 4
 #  Use arrow keys to move snake around
 #  Eat the red apples and increase your score
