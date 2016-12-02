@@ -1,8 +1,10 @@
 print("\nKennedy Kaufman\n61371023\n")
+#  TURN ON SOUND, super cool background music will help increase scores, its science
 #  Snake Game for SI 206 Project 4
 #  Use arrow keys to move snake around
 #  Eat the red apples and increase your score
 #  Don't eat yourself or go outside the boundries
+#  final score will be output
 
 #  import modles
 import pygame
